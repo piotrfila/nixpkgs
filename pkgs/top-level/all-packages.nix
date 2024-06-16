@@ -5615,13 +5615,13 @@ with pkgs;
 
   klaus = with python3Packages; toPythonApplication klaus;
 
-  klipper = callPackage ../servers/klipper { };
+  klipper = callPackage ../servers/klipper { gcc-arm-embedded = gcc-arm-embedded-11; };
 
   klipper-firmware = callPackage ../servers/klipper/klipper-firmware.nix { gcc-arm-embedded = gcc-arm-embedded-11; };
 
-  klipper-flash = callPackage ../servers/klipper/klipper-flash.nix { };
+  klipper-flash = callPackage ../servers/klipper/klipper-flash.nix { gcc-arm-embedded = gcc-arm-embedded-11; };
 
-  klipper-genconf = callPackage ../servers/klipper/klipper-genconf.nix { };
+  klipper-genconf = callPackage ../servers/klipper/klipper-genconf.nix { gcc-arm-embedded = gcc-arm-embedded-11; };
 
   klipper-estimator = callPackage ../applications/misc/klipper-estimator {
     inherit (darwin.apple_sdk.frameworks) Security SystemConfiguration;
