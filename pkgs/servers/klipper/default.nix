@@ -2,6 +2,7 @@
 , lib
 , fetchFromGitHub
 , python3
+, gcc-arm-embedded
 , unstableGitUpdater
 , makeWrapper
 }:
