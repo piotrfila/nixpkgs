@@ -20,6 +20,7 @@ let
       apprise
       python-periphery
       ldap3
+      gpiod
     ]
   );
 in stdenvNoCC.mkDerivation rec {
