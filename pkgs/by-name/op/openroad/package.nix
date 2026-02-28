@@ -17,7 +17,7 @@
   versionCheckHook,
 
   # buildInputs
-  boost,
+  boost188,
   cbc,
   cimg,
   clp,
@@ -66,7 +66,7 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   buildInputs = [
-    boost
+    boost188
     cbc
     cimg
     clp
@@ -121,7 +121,7 @@ stdenv.mkDerivation (finalAttrs: {
     (lib.cmakeBool "CMAKE_RULE_MESSAGES" false)
     (lib.cmakeFeature "TCL_HEADER" "${tcl}/include/tcl.h")
     (lib.cmakeFeature "TCL_LIBRARY" "${tcl}/lib/libtcl${stdenv.hostPlatform.extensions.sharedLibrary}")
-    (lib.cmakeFeature "boost_ROOT" "${boost}")
+    (lib.cmakeFeature "boost_ROOT" "${boost188}")
   ]
   ++ lib.optionals stdenv.hostPlatform.isDarwin [
     (lib.cmakeFeature "CMAKE_CXX_FLAGS" "-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED -Wno-error=deprecated-declarations")
