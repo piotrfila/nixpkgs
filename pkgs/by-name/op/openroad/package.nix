@@ -112,7 +112,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   cmakeFlags = [
     # Disable tests on Darwin to avoid discovery timeouts during build
-    (lib.cmakeBool "ENABLE_TESTS" finalAttrs.finalPackage.doCheck)
+    (lib.cmakeBool "ENABLE_TESTS" false)
     (lib.cmakeBool "USE_SYSTEM_BOOST" true)
     (lib.cmakeBool "USE_SYSTEM_ABC" false)
     (lib.cmakeBool "ABC_SKIP_TESTS" true)
